@@ -1,5 +1,6 @@
 site_name: UAB Research Computing DevOps Docs
 repo_url: https://github.com/uabrc/devops-docs
+edit_uri: blob/main/docs/
 
 theme:
   name: material
@@ -9,11 +10,20 @@ theme:
   features:
     - navigation.indexes
     - navigation.instant
+    - content.code.copy
+    - content.action.edit
+  favicon: images/favicon.png
+  logo: images/logo.png
 
 extra_css:
   - stylesheets/extra.css
 
-copyright: Copyright &copy; 2021-2022 The University of Alabama at Birmingham.<br /><b>Still stuck after reading?</b> Email us at <a href="mailto:support@listserv.uab.edu" class="supportemail">support@listserv.uab.edu</a>
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: Copyright &copy; The University of Alabama at Birmingham.
 
 markdown_extensions:
   - admonition
@@ -30,10 +40,25 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins:
+plugins: # order matters!
   - search
-  - table-reader:
-      data_path: docs
+  - meta
+  - blog:
+      archive_date_format: MMMM yyyy
+      archive_url_date_format: yyyy/MM
+      blog_dir: news
+      blog_toc: true
+      post_date_format: full
+      post_excerpt: required
+      post_readtime: false
+      categories_allowed:
+        - Known Issues
+        - Maintenance
+        - Outreach
+        - Survey
+  - gen-files:
+      scripts:
+        - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
   - glightbox:
