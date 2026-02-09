@@ -61,10 +61,8 @@ plugins: # order matters!
         - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
-  - glightbox:
-      # auto_caption: true
+  - glightbox
 
 nav:
   - Home: index.md
   - Ticket Issues: tickets.md
-  - OOD App Debugging: ood_app_debug.md

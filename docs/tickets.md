@@ -6,7 +6,7 @@
 
 ### General Cheaha Account Request
 
-All UAB users can request their own Cheaha account by going to [https://rc.uab.edu](https://rc.uab.edu) and filling out a short form. No intervention on our end is required.
+All UAB users can request their own Cheaha account by going to <https://rc.uab.edu> and filling out a short form. No intervention on our end is required.
 
 **Canned Response**:
 
@@ -19,7 +19,7 @@ All UAB users can request their own Cheaha account by going to [https://rc.uab.e
 Cloud accounts must be created by Clyde or John as of now and is not linked with SSO. Go through the following steps:
 
 1. Create a [task](#creating-a-servicenow-task) on the ticket giving the BlazerID or XIAS name for the person requesting the account. Commonly looks like `Create Cloud account for <blazerid_or_XIAS>`. Omit any `@uab.edu` string for BlazerIDs, but keep the email host for XIAS accounts.
-2. Copy the task link from the main ticket page (looks like `TASK0000000`) and put in the Slack tickets channel something like `@rc-ops-grp <task_id> Request to create cloud account for <blazerid_or_XIAS>`. Make sure the task is an actual link to the task to make it easier on Ops.
+1. Copy the task link from the main ticket page (looks like `TASK0000000`) and put in the Slack tickets channel something like `@rc-ops-grp <task_id> Request to create cloud account for <blazerid_or_XIAS>`. Make sure the task is an actual link to the task to make it easier on Ops.
 
 **Canned Response**:
 
@@ -32,7 +32,7 @@ Cloud accounts must be created by Clyde or John as of now and is not linked with
 Cloud accounts must be created by Clyde or John as of now and is not linked with SSO. Go through the following steps:
 
 1. Create a [task](#creating-a-servicenow-task) on the ticket giving the BlazerID or XIAS name for the person requesting the account. Commonly looks like `Create Cloud account for <blazerid_or_XIAS@host.edu>`. All personal accounts should include the email host (`@uab.edu` or otherwise)
-2. Copy the task link from the main ticket page (looks like `TASK0000000`) and put in the Slack tickets channel something like `@rc-ops-grp <task_id> Request to create cloud account for <blazerid_or_XIAS@host.edu>`. Make sure the task is an actual link to the task to make it easier on Ops.
+1. Copy the task link from the main ticket page (looks like `TASK0000000`) and put in the Slack tickets channel something like `@rc-ops-grp <task_id> Request to create cloud account for <blazerid_or_XIAS@host.edu>`. Make sure the task is an actual link to the task to make it easier on Ops.
 
 **Canned Response**:
 
@@ -63,33 +63,33 @@ Cheaha spaces follow all of the general rules listed at the beginning of the [sh
 
     1. The Outlook People menu. Search for the person's name or email in the search bar and it should pull up some information on them. This is useful since it works for both UAB and UABMC email addresses.
 
-    2. The [UAB Directory](https://www.uab.edu/directory/). You'll need to authenticate to search for people, but you can enter either their name or their BlazerID. Their position should be listed in the results. See below for an example
+1. The [UAB Directory](https://www.uab.edu/directory/). You'll need to authenticate to search for people, but you can enter either their name or their BlazerID. Their position should be listed in the results. See below for an example
 
-        ![! Example directory entry with job title](res/example_uab_directory_entry.png)
+    ![! Example directory entry with job title](res/example_uab_directory_entry.png)
 
-    3. Search their name plus UAB in Google. Do some sleuthing around the UAB site.
+1. Search their name plus UAB in Google. Do some sleuthing around the UAB site.
 
-2. Check if they already own a project space.
+1. Check if they already own a project space.
 
     1. You will need their BlazerID for this which is on the ticket if the original email came from their UAB email address. If it came from a UABMC or other address, you can use the UAB directory and search for them there.
 
-    2. Open a terminal on Cheaha and run the following: `ll /data/project | grep <blazerid>`. If nothing shows up, they do not own a project space yet. If an entry does appear, check if it's a core account by searching the name of the project space. These projects are generally named exactly the same as the name of the core. If you're unsure about something, get assistance from William, Matt, or Prema or get clarification about the existing project space on the ticket.
+    1. Open a terminal on Cheaha and run the following: `ll /data/project | grep <blazerid>`. If nothing shows up, they do not own a project space yet. If an entry does appear, check if it's a core account by searching the name of the project space. These projects are generally named exactly the same as the name of the core. If you're unsure about something, get assistance from William, Matt, or Prema or get clarification about the existing project space on the ticket.
 
-3. If they meet the criteria for the project space, ask them what they would like the name of the project space to be as well as a list of BlazerIDs to have access to the space. Suggest project names such as the following:
+1. If they meet the criteria for the project space, ask them what they would like the name of the project space to be as well as a list of BlazerIDs to have access to the space. Suggest project names such as the following:
 
     1. Their last name + 'lab', e.g. `warrinerlab`. Make sure that project name does not already exist
 
-    2. Their BlazerID + 'lab'. This is used when the requester has a last name that is already used in another lab space name, e.g. `zhang`.
+    1. Their BlazerID + 'lab'. This is used when the requester has a last name that is already used in another lab space name, e.g. `zhang`.
 
     If they already have another name they would like, that's fine. Suggest they keep names as brief as possible to help others remember and type the name.
 
-4. Make sure all users mentioned in the ticket already have a Cheaha account before putting in the request with Ops.
+1. Make sure all users mentioned in the ticket already have a Cheaha account before putting in the request with Ops.
 
     1. Can check by going opening a terminal on Cheaha and running `ls -d /data/user/[username]` for each username. If there are a bunch of users listed, you can also use a regex to list which ones exist like so `ls /data/user | grep -e '[user1]|[user2]|[user3]|...`. Go through the returned list and check which IDs are missing, if any.
 
-5. Once everything above is confirmed, create a [task](#creating-a-servicenow-task) including the requested project name, the owner, and the members. The description usually looks like `Create Cheaha project space [project_name] assigned to [owner]. Add [members]`
+1. Once everything above is confirmed, create a [task](#creating-a-servicenow-task) including the requested project name, the owner, and the members. The description usually looks like `Create Cheaha project space [project_name] assigned to [owner]. Add [members]`
 
-6. Post the task ID along with the description to the `#tickets` channel adding `@rc-ops-grp`. Usually will look like `@rc-ops-grp TASK00000 Request to create Cheaha project [project_name] assigned to [owner]. Add [members]`
+1. Post the task ID along with the description to the `#tickets` channel adding `@rc-ops-grp`. Usually will look like `@rc-ops-grp TASK00000 Request to create Cheaha project [project_name] assigned to [owner]. Add [members]`
 
 **Canned Response (Space Approved)**:
 
@@ -113,17 +113,17 @@ Go through the following steps to verify we can create a project:
 
 1. Make sure the requester has a professor title, is a data steward for a PI, or is a core director.
 
-2. Ask them for the name of the project as well as the BlazerIDs for anyone who needs access if not already provided. Anyone who needs access will first need to request a personal Cloud account.
+1. Ask them for the name of the project as well as the BlazerIDs for anyone who needs access if not already provided. Anyone who needs access will first need to request a personal Cloud account.
 
     1. Cloud project names typically match Cheaha project names if one exists. Check if the PI owns a Cheaha project (open a terminal on Cheaha and run the following: `ll /data/project | grep <blazerid>`) and suggest that as a Cloud project name. Same thing applies for Core projects, they are most often named after the Core itself.
 
-3. Ask `rc-ops-grp` if the requestor already has a project assigned to them or to the PI they are making the request for. Also ask if they have a personal Cloud account.
+1. Ask `rc-ops-grp` if the requestor already has a project assigned to them or to the PI they are making the request for. Also ask if they have a personal Cloud account.
 
     1. If they already have an assigned project, check with William, Matt, or Prema to discuss whether an additional project should be approved in this case. Be sure to ask the requestor why they need an additional project if they already have one.
 
-4. Create a [task](#creating-a-servicenow-task) on the ticket giving the project name, owner, and members. Commonly looks like `Create Cloud project <project_name> assigned to <owner>. Give <member_list> access`.
+1. Create a [task](#creating-a-servicenow-task) on the ticket giving the project name, owner, and members. Commonly looks like `Create Cloud project <project_name> assigned to <owner>. Give <member_list> access`.
 
-5. Copy the task link from the main ticket page (looks like `TASK0000000`) and put in the Slack tickets channel along with the description. Should look something like `@rc-ops-grp TASK0000000 Request to create Cloud project <project_name> assigned to <owner>. Give <member_list> access`.
+1. Copy the task link from the main ticket page (looks like `TASK0000000`) and put in the Slack tickets channel along with the description. Should look something like `@rc-ops-grp TASK0000000 Request to create Cloud project <project_name> assigned to <owner>. Give <member_list> access`.
 
 **Canned Response (Space Approved)**:
 
@@ -147,15 +147,15 @@ Go through the following steps to verify we can create a project:
 
 1. Make sure the requester has a professor title, is a data steward for a PI, or is a core director.
 
-2. Check if they or the PI in case the requester is a data steward already owns a project space on Cheaha (open a terminal on Cheaha and run the following: `ll /data/project | grep <blazerid>`). If they do, propose the same name for the LTS project. If they do not, request a name for the space and if they would also like a Cheaha project created. LTS spaces are generally paired with Cheaha spaces for active and archived data or very large active datasets.
+1. Check if they or the PI in case the requester is a data steward already owns a project space on Cheaha (open a terminal on Cheaha and run the following: `ll /data/project | grep <blazerid>`). If they do, propose the same name for the LTS project. If they do not, request a name for the space and if they would also like a Cheaha project created. LTS spaces are generally paired with Cheaha spaces for active and archived data or very large active datasets.
 
-3. Ask `rc-ops-grp` if the requestor already has a project assigned to them or to the PI they are making the request for. Also ask if they have a personal LTS account. If they don't have a personal LTS account, that should also be created on this ticket.
+1. Ask `rc-ops-grp` if the requestor already has a project assigned to them or to the PI they are making the request for. Also ask if they have a personal LTS account. If they don't have a personal LTS account, that should also be created on this ticket.
 
-4. Create a [task](#creating-a-servicenow-task) on the ticket giving the space name and owner. Will look generally like `Create LTS shared space [name] assigned to [owner]`.
+1. Create a [task](#creating-a-servicenow-task) on the ticket giving the space name and owner. Will look generally like `Create LTS shared space [name] assigned to [owner]`.
 
-    1. If the requester also needs a personal account, create a separate task on the same ticket following the instructions found [above](#lts-account-request).
+    1. If the requester also needs a personal account, create a separate task on the same ticket following the instructions found in the [LTS Account Request](#lts-account-request) section.
 
-5. Post the task(s) to `#tickets` along with the description. Will look something like `@rc-ops-grp TASK000000 Request to create LTS shared space [name] assigned to [owner]`.
+1. Post the task(s) to `#tickets` along with the description. Will look something like `@rc-ops-grp TASK000000 Request to create LTS shared space [name] assigned to [owner]`.
 
 **Canned Response (Space Approved)**:
 
@@ -196,9 +196,9 @@ As more data are created by our researchers, they will inevitably ask for increa
 In general, we do not want to install software as modules if we do not need to. Having something available as a module means we need to maintain and update it which is time-consuming. Most software researchers want to use is available via Anaconda/Pip and Docker, both of which are installable by the researcher. When dealing with these requests, we need to find the package first and test the installation process to make it seamless for the researcher. I generally check package availability in the following order:
 
 1. Check conda for software package, google `conda <software_name>`
-2. Check dockerhub for software, google `dockerhub <software_name>`. Can be used with singularity on the cluster
-3. Check the current available modules to see if they missed it. Use `module spider` with part of the software name and see what appears.
-4. Check the github repo or software website for installation instructions.
+1. Check dockerhub for software, google `dockerhub <software_name>`. Can be used with singularity on the cluster
+1. Check the current available modules to see if they missed it. Use `module spider` with part of the software name and see what appears.
+1. Check the github repo or software website for installation instructions.
 
 You will want to check on package versions as well as when the packages were last updated at each site to see if one source has a more recently updated version. If a specific older version is requested, you can test with that specific version as well as offer the option for the newer version depending on what they want.
 
@@ -275,9 +275,9 @@ In almost every case where a piece of software is not available via conda or sin
 If the software is licensed and has not already been installed, ask the user details about the license. Typical licensed software connects to a license server to distribute floating licenses or requires a license file installed in the module itself. Details on a license may also be included in the installation instructions. Licensed software typically restricts who can use it if the license is owned by a specific person, lab, or department. If that is the case, we need to know who should have access to the module as well.
 
 1. Check if the software exists on [EasyBuild's supported software](https://docs.easybuild.io/version-specific/supported-software/). For example, here is an entry for the [R programming language](https://docs.easybuild.io/version-specific/supported-software/#r_1). It has up to version 4.3.3 available along with many older versions. Paid, licensed software is almost never found here. If it does not exist there, find a descriptive set of installation instructions on the software website or their Github repo.
-2. Create an issue on our [cluster software repo](https://gitlab.rc.uab.edu/rc/cluster-software). Title should be something like `Install <software> Version <version_number>`
-3. The issue description should contain the ticket number as well as a link to the easybuild site, a link to other installation instructions, or the instructions in an attached file. If the software is licensed, include details about how to set up the license and who should have access to the module.
-4. Add the `Backlog` and other relevant labels to the issue. Submit the issue.
+1. Create an issue on our [cluster software repo](https://gitlab.rc.uab.edu/rc/cluster-software). Title should be something like `Install <software> Version <version_number>`
+1. The issue description should contain the ticket number as well as a link to the easybuild site, a link to other installation instructions, or the instructions in an attached file. If the software is licensed, include details about how to set up the license and who should have access to the module.
+1. Add the `Backlog` and other relevant labels to the issue. Submit the issue.
 
 **Canned Response Prior to Installation:**
 
@@ -311,7 +311,7 @@ For unplanned outages, we generally don't have a great idea when service will be
 
 **Example Ticket:** [RITM0694570](https://uabprod.service-now.com/nav_to.do?uri=%2Fsc_req_item.do%3Fsys_id%3Dd9beea331bcd82908a7821f2b24bcb84%26sysparm_record_target%3Dsc_req_item%26sysparm_record_row%3D1%26sysparm_record_rows%3D1%26sysparm_record_list%3Dassignment_groupDYNAMICd6435e965f510100a9ad2572f2b47744%5EnumberSTARTSWITHRITM0694570%5Eassignment_group!%3D4a687cd637f072c0cda353b543990ea8%5EORassignment_group%3D%5EORassignment_group%3D4a687cd637f072c0cda353b543990ea8%5Eopened_by%3De6c34574377371007114a6d2b3990e3a%5Ecat_itemNOT%2BIN579212a93705a70024a67c1643990e84,61c24473db5650104ff1fd7aae961961,998fc4ec1b3aa5106bd68552604bcb3c%5EORcat_item%3D%5EORcat_itemIN579212a93705a70024a67c1643990e84,61c24473db5650104ff1fd7aae961961,998fc4ec1b3aa5106bd68552604bcb3c%5Eopened_by%3De6c34574377371007114a6d2b3990e3a%5EORDERBYDESCsys_created_on)
 
-Occasionally, there will be an OOD specific error that does not affect the cluster as a whole. This typically comes up as a `500 Internal Server` error. In this case, check if you also receive the error by going to both [https://rc.uab.edu](https://rc.uab.edu) and [https://rc.uab.edu/account](https://rc.uab.edu/account). Sometimes, the account creation service can have an issue while the main OOD will be fine so it's always good to check both.
+Occasionally, there will be an OOD specific error that does not affect the cluster as a whole. This typically comes up as a `500 Internal Server` error. In this case, check if you also receive the error by going to both <https://rc.uab.edu> and <https://rc.uab.edu/account>. Sometimes, the account creation service can have an issue while the main OOD will be fine so it's always good to check both.
 
 If you don't see an error on either site yourself, have the user try to access OOD again using a Private Browser. If this still doesn't fix the issue, you can ask for assistance from Ops
 
@@ -325,7 +325,7 @@ As well as having errors that affect all jobs either on the cluster or just OOD,
 
     1. The `.bashrc` is located at `$HOME/.bashrc` and must be added as a plain text file to the ticket.
 
-    2. Have them follow the instructions [on our docs](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_layout/#debugging-ood-job-failures) and attach a zip folder with the scripts and logs from the OOD job to the ticket. All of these files must be in a zip folder due to many of the files having a disallowed file type in SNow.
+    1. Have them follow the instructions [on our docs](https://docs.rc.uab.edu/cheaha/open_ondemand/ood_layout/#debugging-ood-job-failures) and attach a zip folder with the scripts and logs from the OOD job to the ticket. All of these files must be in a zip folder due to many of the files having a disallowed file type in SNow.
 
     **Canned Response Asking for More Details:**
 
@@ -333,9 +333,9 @@ As well as having errors that affect all jobs either on the cluster or just OOD,
     >
     > We'd be happy to take a look. To help us, please follow the instructions at https://docs.rc.uab.edu/cheaha/open_ondemand/ood_layout/#debugging-ood-job-failures to retrieve the logs and scripts for a failed job. Zip those files and attach the zip folder to the ticket. As well, please attach your .bashrc as a plain text file to the ticket. You can find this file at $HOME/.bashrc
 
-2. Check the `output.log` file for any error messages. Also check the `bashrc` for anything that stands out as particularly wrong.
+1. Check the `output.log` file for any error messages. Also check the `bashrc` for anything that stands out as particularly wrong.
 
-3. See [common app errors](./common_app_errors.md) for further debugging instructions
+<!-- 1. See [common app errors](./common_app_errors.md) for further debugging instructions -->
 
 ## Addendums
 
@@ -347,11 +347,11 @@ When you need DevOps to complete something in order to address a ticket, create 
 
     ![! Catalog Tasks section](res/snow_catalog_tasks.png)
 
-2. Set the Assignment Group to `Research Computing`. Describe the task in the Short Description field. If necessary, add additional information to the Description box.
+1. Set the Assignment Group to `Research Computing`. Describe the task in the Short Description field. If necessary, add additional information to the Description box.
 
     ![! Creating a new task](res/snow_new_task_form.png)
 
-3. Click `Submit` in the top right to finish creation. The new task will appear in the Catalog Tasks section with the original task now.
+1. Click `Submit` in the top right to finish creation. The new task will appear in the Catalog Tasks section with the original task now.
 
     ![! New task has been added to the catalog tasks](res/snow_new_task.png)
 
@@ -365,26 +365,26 @@ We like to have a record of who is submitting tickets over time which is usually
 
     Click the information button next to the `Request` field (highlighted red above) and then click `Open Record` in the popup menu to open the Request page.
 
-2. In the Request menu, click the magnifying glass next to the `Requested For` field to open an ID search window. It will look like below.
+1. In the Request menu, click the magnifying glass next to the `Requested For` field to open an ID search window. It will look like below.
 
     ![! ServiceNow ID search with no one selected](res/snow_id_search_1.png)
 
-3. Use one of the Name, Blazer ID, or UAB Medicine Email fields to search for the person who submitted the ticket.
+1. Use one of the Name, Blazer ID, or UAB Medicine Email fields to search for the person who submitted the ticket.
 
     1. If you use a Name, it's possible multiple people appear if the name is common or that no one appears if the name they gave in the ticket is not their legal name entered in the database.
 
-    2. It can also be difficult to search some international names due to different naming conventions based on their heritage. For example, some Asian countries place the family name before the given name, and some other countries commonly give a person more than 3 names. Some sleuthing may be required to make sure you're selecting the right person
+    1. It can also be difficult to search some international names due to different naming conventions based on their heritage. For example, some Asian countries place the family name before the given name, and some other countries commonly give a person more than 3 names. Some sleuthing may be required to make sure you're selecting the right person
 
-    3. If you're in a situation where you're completely unsure which record to select, please ask the Requester for their Blazer ID. You can say it's necessary to get more information about the situation on whichever platform they are asking about as well.
+1. If you're in a situation where you're completely unsure which record to select, please ask the Requester for their Blazer ID. You can say it's necessary to get more information about the situation on whichever platform they are asking about as well.
 
     See below for an example of what appears when searching someone
 
-    ![! SNow ID search with a result after searching a name](res/snow_id_search_2.png)
+    ![! SNow ID search with a result after searching a name](res/snow_id_search_1.png)
 
-4. Click the name in the entry you want to assign as the ticket Requester for it to autofill their name and Blazer ID in the Request screen. Set the `Source` field to `Email` (most common, may also have been a phone-in, but very rare) and click `Update` in the top right.
+1. Click the name in the entry you want to assign as the ticket Requester for it to autofill their name and Blazer ID in the Request screen. Set the `Source` field to `Email` (most common, may also have been a phone-in, but very rare) and click `Update` in the top right.
 
-5. If a person has an IDM entry but that entry doesn't have any information on their building or room assignment, those fields will be blank with a red star indicating you cannot update the ticket until those fields are filled in. You can just enter `?` into both of those fields.
+1. If a person has an IDM entry but that entry doesn't have any information on their building or room assignment, those fields will be blank with a red star indicating you cannot update the ticket until those fields are filled in. You can just enter `?` into both of those fields.
 
-6. Once everything is filled in to ServiceNow's satisfaction, you can click `Update` in the top right to save and exit the ticket or click `Save` to save your changes and keep the ticket open if you need to reply to them.
+1. Once everything is filled in to ServiceNow's satisfaction, you can click `Update` in the top right to save and exit the ticket or click `Save` to save your changes and keep the ticket open if you need to reply to them.
 
 In the case where a person doesn't have an IDM entry (for instance if they are a XIAS user from a different institution), leave the field as Guest.
