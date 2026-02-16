@@ -61,36 +61,8 @@ plugins: # order matters!
         - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
-      strict: false
   - glightbox
-  - table-reader:
-      data_path: docs
-  - title-casing
-  - redirects:
-      redirect_maps:
 
 nav:
   - Home: index.md
-  - Cheaha:
-      - Archiving Modules: cheaha/archiving_modules.md
-      - Shell Commands: cheaha/shell_commands.md
-  - GitLab Runner:
-      - Personal GitLab Runner Setup: gitlab_runner/personal_gitlab_runner_setup.md
-  - Openstack:
-      - VM Migration: openstack/vm_migration.md
-      - VM Service Setup: service/service_setup.md
-
-validation:
-  nav:
-    omitted_files: warn
-    not_found: warn
-    absolute_links: warn
-  links:
-    not_found: warn
-    anchors: warn
-    absolute_links: warn
-    unrecognized_links: warn
-
-watch:
-  - scripts
-  - theme
+  - Ticket Issues: tickets.md
