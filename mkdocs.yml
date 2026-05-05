@@ -40,7 +40,8 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins: # order matters!
+plugins:
+  # order matters!
   - search
   - meta
   - blog:
@@ -79,6 +80,8 @@ nav:
   - Openstack:
       - VM Migration: openstack/vm_migration.md
       - VM Service Setup: service/service_setup.md
+  - Identity:
+      - Saml: saml/saml.md
 
 validation:
   nav:
