@@ -62,13 +62,7 @@ plugins:
         - scripts/pandoc_generator.py
   - git-revision-date-localized:
       type: date
-      strict: false
   - glightbox
-  - table-reader:
-      data_path: docs
-  - title-casing
-  - redirects:
-      redirect_maps:
 
 nav:
   - Home: index.md
@@ -82,6 +76,7 @@ nav:
       - VM Service Setup: service/service_setup.md
   - Identity:
       - Saml: saml/saml.md
+  - Ticket Issues: tickets.md
 
 validation:
   nav:
