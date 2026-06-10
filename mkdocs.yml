@@ -74,6 +74,7 @@ nav:
   - Openstack:
       - VM Migration: openstack/vm_migration.md
       - VM Service Setup: service/service_setup.md
+      - Share Openstack Image: openstack/share_image.md
   - Identity:
       - Saml: saml/saml.md
   - Ticket Issues: tickets.md
