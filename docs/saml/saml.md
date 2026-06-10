@@ -19,11 +19,9 @@ Here in `/etc/shibboleth/attribute-policy.xml` there are a few more change point
 ```diff
 <afp:AttributeRule attributeID="eppn">
 +    <afp:PermitValueRule xsi:type="basic:ANY" />
+-    <afp:PermitValueRuleReference ref="ScopingRules" />
 </afp:AtttributeRule>
 
- <afp:AttributeRule attributeID="eppn">
--    <afp:PermitValueRuleReference ref="ScopingRules" />
- </afp:AtttributeRule>
 ```
 
 In `/etc/httpd/conf.d/front-end.conf` we have a completely new entry
