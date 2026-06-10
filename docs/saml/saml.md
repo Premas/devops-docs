@@ -6,14 +6,11 @@ To get an overview of what we will be working with later we start in `/etc/shibb
 
 ![image of shibboleth2.xml configuration in terminal](image.png)
 
-
-
 Next we will look at `/etc/shibboleth/attribute-map.xml`
 
 - In this file we can configure how the eppn value is decoded. In the current configuration we have left it as scoped but its possible to transform it into a simple string value as well
 
 ![image of attribute-map.xml](image-1.png)
-
 
 Here in `/etc/shibboleth/attribute-policy.xml` there are a few more change points
 
@@ -28,7 +25,6 @@ Here in `/etc/shibboleth/attribute-policy.xml` there are a few more change point
 -    <afp:PermitValueRuleReference ref="ScopingRules" />
  </afp:AtttributeRule>
 ```
-
 
 In `/etc/httpd/conf.d/front-end.conf` we have a completely new entry
 
