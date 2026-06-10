@@ -17,11 +17,10 @@ Here in `/etc/shibboleth/attribute-policy.xml` there are a few more change point
 - First is the highlighted section showing the eppn. We currently have the `PermitValueRule` set to `basic:ANY` to allow the value to flow through simply as it is. Previously we were using the `PermitValueRuleReference ScopingRules` which can be seen towards the top of the screenshot, this policy defines what an acceptable value is for the rules that reference it.
 
 ```diff
-<afp:AttributeRule attributeID="eppn">
-
+ <afp:AttributeRule attributeID="eppn">
 +    <afp:PermitValueRule xsi:type="basic:ANY" />
 -    <afp:PermitValueRuleReference ref="ScopingRules" />
-</afp:AtttributeRule>
+ </afp:AtttributeRule>
 
 ```
 
@@ -51,5 +50,5 @@ In `/etc/httpd/conf.d/front-end.conf` we have a completely new entry
 +       ProxyPass http://login001/
 +       ProxyPassReverse http://login001/
 +   </LocationMatch>
-</VirtualHost>
+ </VirtualHost>
 ```
