@@ -33,26 +33,24 @@ In `/etc/httpd/conf.d/front-end.conf` we have a completely new entry
 - In the next block we preform one of two different regex matches depending on if a user has a BlazerID or if they are a XIAS user. Then we update REMOTE_USER and send it back down to the application
 
 ```diff
-+<LocationMatch "/.*">
-+    AuthType shibboleth
-+    ShibRequestSetting requireSession false
-+    Require shibboleth
-+    ShibUseHeaders On
-
-+    #these lines match know EPPNs
-+    #Matches a standard BlazerId
-+    RewriteCond %{LA-U:REMOTE_USER} ^([a-zA-Z1-0_.+-]+@uab.edu)$ [OR]
-+    #Matches a xias account with the @uab domain at the end
-+    RewriteCond %{LA-U:REMOTE_USER} ^(.*@[^@]*?)@uab.edu$
-+    RewriteRule . - [E=REMOTE_USER%1]
-
-+    #this section applies the changes we have made above to the REMOTE_USER value that we send downstream
-+    RequestHeader set REMOTE_USER "expr=%{ENV:REMOTE_USER}"
-+    RequestHeader set X-Forwarded-Scheme http
++   <LocationMatch "/.*">
++       AuthType shibboleth
++       ShibRequestSetting requireSession false
++       Require shibboleth
++       ShibUseHeaders On
++       #these lines match know EPPNs
++       #Matches a standard BlazerId
++       RewriteCond %{LA-U:REMOTE_USER} ^([a-zA-Z1-0_.+-]+@uab.edu)$ [OR]
++       #Matches a xias account with the @uab domain at the end
++       RewriteCond %{LA-U:REMOTE_USER} ^(.*@[^@]*?)@uab.edu$
++       RewriteRule . - [E=REMOTE_USER%1]
++       #this section applies the changes we have made above to the REMOTE_USER value that we send downstream
++       RequestHeader set REMOTE_USER "expr=%{ENV:REMOTE_USER}"
++       RequestHeader set X-Forwarded-Scheme http
 +
-+    #these are placeholder values, for an actual application we would simply insert the ip/dns entry for the application itself
-+    ProxyPass http://login001/
-+    ProxyPassReverse http://login001/
-+</LocationMatch>
++       #these are placeholder values, for an actual application we would simply insert the ip/dns entry for the application itself
++       ProxyPass http://login001/
++       ProxyPassReverse http://login001/
++   </LocationMatch>
 </VirtualHost>
 ```
