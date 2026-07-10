@@ -49,7 +49,8 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins: # order matters!
+plugins:
+  # order matters!
   - search
   - meta
   - blog:
@@ -92,12 +93,15 @@ nav:
   - Cheaha:
       - Archiving Modules: cheaha/archiving_modules.md
       - Shell Commands: cheaha/shell_commands.md
-  - GitLab:
-      - GitLab Runner Setup: gitlab_runner/personal_gitlab_runner_setup.md
-  - OpenStack:
+  - GitLab Runner:
+      - Personal GitLab Runner Setup: gitlab_runner/personal_gitlab_runner_setup.md
+  - Openstack:
       - VM Migration: openstack/vm_migration.md
-  - Service:
-      - Service Setup: service/service_setup.md
+      - VM Service Setup: service/service_setup.md
+      - Share Openstack Image: openstack/share_image.md
+  - Identity:
+      - Saml: saml/saml.md
+      - SP Metadata Generation: saml/create-sp-metadata.md
   - Ticket Issues: tickets.md
 
 validation:
